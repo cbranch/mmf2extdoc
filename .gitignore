@@ -1,0 +1,14 @@
+# Qt generated files
+ui_*.h
+Debug/
+Release/
+GeneratedFiles/
+# Visual Studio files
+*.idb
+*.pch
+*.pdb
+*.ncb
+*.suo
+*.vcproj.*.user
+*.exp
+*.lib
