@@ -1,0 +1,12 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Help.chm
+Contents file=toc.hhc
+Default Font=Tahoma,8,0
+Default Window=Default
+Display compile progress=Yes
+Error log file=_errorlog.txt
+Full-text search=Yes
+Index file=index.hhk
+Language=0x409 English (United States)
+

@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/templates">
+        <file alias="toc_header">Resources/toc_header.txt</file>
+        <file alias="project_header">Resources/project_header.txt</file>
+        <file alias="html_footer">Resources/html_footer.txt</file>
+        <file alias="html_header">Resources/html_header.txt</file>
+        <file alias="stylesheet">Resources/stylesheet.txt</file>
+    </qresource>
+</RCC>

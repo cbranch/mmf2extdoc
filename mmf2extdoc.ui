@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MMF2ExtDocClass</class>
+ <widget class="QDialog" name="MMF2ExtDocClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MMF2 Extension Documenter</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="importButton">
+       <property name="text">
+        <string>Import</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="loadButton">
+       <property name="text">
+        <string>Load</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveButton">
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="editParamsButton">
+       <property name="text">
+        <string>Edit parameters</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="objectName"/>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QSplitter" name="splitter_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QTreeView" name="treePages">
+      <property name="contextMenuPolicy">
+       <enum>Qt::ActionsContextMenu</enum>
+      </property>
+      <property name="acceptDrops">
+       <bool>true</bool>
+      </property>
+      <property name="dragEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="dragDropMode">
+       <enum>QAbstractItemView::DragDrop</enum>
+      </property>
+     </widget>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QPlainTextEdit" name="textEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QTreeView" name="listParams">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="dragDropMode">
+        <enum>QAbstractItemView::InternalMove</enum>
+       </property>
+       <property name="defaultDropAction">
+        <enum>Qt::MoveAction</enum>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="allColumnsShowFocus">
+        <bool>true</bool>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+  <action name="actionLoad">
+   <property name="text">
+    <string>Load</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import</string>
+   </property>
+  </action>
+  <action name="actionEditParameters">
+   <property name="text">
+    <string>Edit Parameters</string>
+   </property>
+  </action>
+  <action name="actionInsertPage">
+   <property name="text">
+    <string>Insert page</string>
+   </property>
+  </action>
+  <action name="actionDeletePage">
+   <property name="text">
+    <string>Delete page</string>
+   </property>
+  </action>
+  <action name="actionAppendPage">
+   <property name="text">
+    <string>Append page</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="mmf2extdoc.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>loadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>actionLoad</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saveButton</sender>
+   <signal>clicked()</signal>
+   <receiver>actionSave</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>importButton</sender>
+   <signal>clicked()</signal>
+   <receiver>actionImport</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionImport</sender>
+   <signal>triggered()</signal>
+   <receiver>MMF2ExtDocClass</receiver>
+   <slot>importExtension()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLoad</sender>
+   <signal>triggered()</signal>
+   <receiver>MMF2ExtDocClass</receiver>
+   <slot>loadFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave</sender>
+   <signal>triggered()</signal>
+   <receiver>MMF2ExtDocClass</receiver>
+   <slot>saveFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textEdit</sender>
+   <signal>textChanged()</signal>
+   <receiver>MMF2ExtDocClass</receiver>
+   <slot>updatePageText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>446</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>editParamsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>actionEditParameters</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>294</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEditParameters</sender>
+   <signal>triggered()</signal>
+   <receiver>MMF2ExtDocClass</receiver>
+   <slot>editParams()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDeletePage</sender>
+   <signal>triggered()</signal>
+   <receiver>MMF2ExtDocClass</receiver>
+   <slot>deletePage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionInsertPage</sender>
+   <signal>triggered()</signal>
+   <receiver>MMF2ExtDocClass</receiver>
+   <slot>insertPage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAppendPage</sender>
+   <signal>triggered()</signal>
+   <receiver>MMF2ExtDocClass</receiver>
+   <slot>appendPage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>objectName</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MMF2ExtDocClass</receiver>
+   <slot>setExtensionName(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>446</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>loadFile()</slot>
+  <slot>saveFile()</slot>
+  <slot>importExtension()</slot>
+  <slot>showPage(QModelIndex)</slot>
+  <slot>updatePageText()</slot>
+  <slot>editParams()</slot>
+  <slot>deletePage()</slot>
+  <slot>insertPage()</slot>
+  <slot>appendPage()</slot>
+  <slot>setExtensionName(QString)</slot>
+ </slots>
+</ui>

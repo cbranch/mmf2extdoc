@@ -1,0 +1,31 @@
+body {
+  font-family: 'Tahoma', sans-serif;
+  background-color: #EAEAD5;
+  color: #202425;
+  margin: 0.5em 0 0 0;
+}
+a {
+  color: #605A52;
+}
+h1 {
+  background-color: #CCB77D;
+  margin: 0 5% 0 0;
+  padding: 0.5em 1em;
+}
+h2 {
+  font-size: 14pt;
+  font-style: italic;
+  margin: 0.5em 0 0 2em;
+}
+h3 {
+  font-size: 14pt;
+}
+p {
+  margin: 1.5em 0;
+}
+.eventEditorText {
+  border: 2px outset #F4C884;
+  background-color: #F4C884;
+  margin: 2em;
+  padding: 0.5em;
+}
